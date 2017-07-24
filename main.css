@@ -11,19 +11,73 @@ COLORS:
 light tan: #eeebda
 
 */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 body{
     font-family: 'Noto Serif', serif;
     line-height: 1.8;
     margin: 0;
     background-color: #eeebda;
+		padding: 20px;
 }
 body > div {
   display:flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1, h2, h3{
     font-family: "Josefin Sans", sans-serif;
     margin-top: 0;
+
 }
 img{
     max-width: 100%;
@@ -32,35 +86,26 @@ img{
     display: block;
 }
 .wrapper{
+		position: relative;
     width: 1000px;
     display: flex;
     align-content: center;
 
-
-
-    /*
-        TODO:
-        - Center up the page
-        - Create a flexbox containerer for
-        the major page sections
-    */
 }
 #site-header{
   display: inline-block;
-    /*
-        TODO
-        - Flexbox property here
-    */
+
 }
 #site-header div{
     text-align: center;
     padding: 60px 0 120px 0;
-    font-size: 4em;
+    font-size: 5em;
     background-image: url(/Users/jerusmacbook/Documents/Projects/Jared-iBeer/ibeer_starter_files/img/header-img.jpg);
 
 
     background-size: cover;
     background-position: right bottom;
+
 }
 #site-header div h1,
 #site-header div h3{
@@ -80,11 +125,9 @@ img{
 }
 #main-navigation{
     background: #444;
+    display: flex;
 
-    /*
-        TODO:
-        - Use Flexbox to arrange the navigation links
-    */
+
 }
 #main-navigation a{
     display: inline-flex;
@@ -93,49 +136,45 @@ img{
     text-transform: uppercase;
     padding: 10px 20px;
     flex-shrink: 0;
+    justify-content: space-around;
 
-    /*
-        TODO:
-        - Flexbox - Create general spacing between nav links
-    */
 }
 #main-navigation #logo{
     margin-right: 400px;
     flex-grow: 1;
 
-    /*
-        TODO:
-        - Flexbox - The logo needs to take up more space
-        that the other links
-    */
 }
 main{
     padding: 20px;
     background-color: #444;
     box-shadow: -5px 5px 8px rgba( 0, 0, 0, 0.3 );
 
-    /*
-        TODO:
-        - Flexbox: Set the starting width of this element
-        - Use relative positioning to bump this upward
-    */
+
+
+
 }
 aside{
     padding: 20px;
     background-color: #eee;
     box-shadow: 5px 5px 8px rgba( 0, 0, 0, 0.3 );
     align-content: center;
-    /*
-        TODO:
-        - Flexbox: Set the starting width of this element
-        - Use relative positioning to bump this upward
-    */
+    position: relative;
+    right: -700px;
+    width: 220px;
+    top: -1811px;
+    /*bottom: 5000px;*/
+
+
+
+
 }
 aside h3{
     text-align: center;
     margin: 0 0 10px 0;
     padding: 0 0 10px 0;
     border-bottom: 1px solid #ccc;
+
+
 }
 aside img{
     border-radius: 50%;
@@ -147,6 +186,9 @@ article{
     box-shadow: -5px 5px 8px rgba( 0, 0, 0, 0.3 );
     padding: 20px;
     margin-bottom: 20px;
+    width: 600px;
+
+
 
 }
 article h2{
@@ -165,28 +207,30 @@ article time{
     margin-bottom: 30px;
     color: #666;
 }
+
 article img{
   float: right;
-  height: 300px;
-  width: 300px;
-    /*
-        TODO:
-        - Float article images to the right
-        and match sizes and spacing to the mockup
-    */
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  /*box-shadow: -5px 5px 8px rgba( 0, 0, 0, 0.3 );*/
+  /*padding: 10px;*/
+  margin-bottom: 20px;
+
 }
 article footer p{
-    /*
-        TODO:
-        - Style the article footer
-        HINT: Look to the article header;
-    */
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+
 }
 #site-footer{
-
+		position: absolute;
     background: #333;
-    /*
-        TODO:
-        - Style the site footer
-    */
+    display: flex;
+    color: white;
+    flex-direction: column-reverse;
+    width: 100%;
+    text-align: center;
+		top: 2200px;
 }
